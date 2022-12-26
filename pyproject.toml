@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "coolp"
+version = "0.1.0"
+description = ""
+authors = ["lerfich <nikita.serg.12@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "1.5.1"
+matplotlib = "^3.6.2"
+argparse = "^1.4.0"
+pytest = "^7.2.0"
+isort = "^5.11.4"
+poethepoet = "^0.16.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "coolp.__init__:start"
+test = "coolp.__init__:test"
+
+[tool.poetry.build]
+generate-setup-file = true
+
+[tool.poe.tasks]
+memo = "echo poe test or poetry run poe isort"
+isort = "isort ."
+formt = ["isort"]
